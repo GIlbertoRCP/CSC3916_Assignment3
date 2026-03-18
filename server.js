@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -153,3 +154,5 @@ app.listen(PORT, () => {
 });
 
 module.exports = app; // for testing only
+
+*/
