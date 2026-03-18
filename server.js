@@ -44,6 +44,35 @@ router.post('/signup', async (req, res) => { // Use async/await
 });
 
 
+router.post('/signin', async (req, res) => {
+    if (!req.body.username || !req.body.password) {
+        return res.status(400).json({ success: false, message: 'Please include both username and password to sign in.' });
+    }
+
+    try {
+        const user = await User.findOne({ username: req.body.username }).select('+password');
+        
+        if (!user) {
+            return res.status(401).json({ success: false, message: 'Authentication failed. User not found.' });
+        }
+        const isMatch = await user.comparePassword(req.body.password);
+        
+        if (isMatch) {
+            const token = jwt.sign(
+                { id: user._id, username: user.username }, 
+                process.env.SECRET_KEY, 
+                { expiresIn: '1h' } 
+            );
+            res.status(200).json({ success: true, token: 'jwt ' + token });
+        } else {
+            res.status(401).json({ success: false, message: 'Authentication failed. Wrong password.' });
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Something went wrong. Please try again later.' });
+    }
+});
+
 router.route('/movies')
     .get(authJwtController.isAuthenticated, async (req, res) => {
         try {
