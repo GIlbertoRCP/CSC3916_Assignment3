@@ -1,4 +1,4 @@
-require('dotenv').config(); // Loads your new .env file!
+require('dotenv').config(); 
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -14,12 +14,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// Connect to MongoDB
-mongoose.connect(process.env.DB)
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error("MongoDB connection error:", err));
-
 app.use(passport.initialize());
 
 const router = express.Router();
@@ -143,9 +137,16 @@ router.route('/movies/:movieparameter')
 
 app.use('/', router);
 
-const PORT = process.env.PORT || 8080; 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+mongoose.connect(process.env.DB)
+    .then(() => {
+        console.log(" Connected to MongoDB successfully!");
+        const PORT = process.env.PORT || 8080; 
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error(" FATAL MongoDB connection error:", err);
+    });
 
 module.exports = app;
