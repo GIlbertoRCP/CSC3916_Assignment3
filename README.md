@@ -1,9 +1,9 @@
 # Assignment Three
-## Purpose
-The purpose of this assignment is to get comfortable working with a NoSQL database (MongoDB). 
 # Submission
-
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/51781414-be101aef-fbf9-4526-9ef9-c8ffe14a005a?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D51781414-be101aef-fbf9-4526-9ef9-c8ffe14a005a%26entityType%3Dcollection%26workspaceId%3D62acc754-9224-4c4f-99a7-81dbec27dc0e#?env%5BCSC3916%20Assignment%203%5D=W3sia2V5IjoidXJsIiwidmFsdWUiOiJodHRwczovL2NzYzM5MTYtYXNzaWdubWVudDMta2JncC5vbnJlbmRlci5jb20iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCIsInNlc3Npb25WYWx1ZSI6Imh0dHBzOi8vY3NjMzkxNi1hc3NpZ25tZW50My1rYmdwLm9ucmVuZGVyLmNvbSIsImNvbXBsZXRlU2Vzc2lvblZhbHVlIjoiaHR0cHM6Ly9jc2MzOTE2LWFzc2lnbm1lbnQzLWtiZ3Aub25yZW5kZXIuY29tIiwic2Vzc2lvbkluZGV4IjowfSx7ImtleSI6Imp3dF90b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQiLCJzZXNzaW9uVmFsdWUiOiJqd3QuLi4iLCJjb21wbGV0ZVNlc3Npb25WYWx1ZSI6Imp3dCBleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcFpDSTZJalk1WW1ObVpHUTROVFkwTnpkaFltRmlaR05oTjJZNVppSXNJblZ6WlhKdVlXMWxJam9pY0c5emRHMWhia0IwWlhOMExtTnZiU0lzSW1saGRDSTZNVGMzTkRBME56WTJOaXdpWlhod0lqb3hOemMwTURVeE1qWTJmUS45RnRGeUhtLWIyeTBvY09FSVJGZFBVRWZuYlZQZkFnVXZGVlcwdUZXRW40Iiwic2Vzc2lvbkluZGV4IjoxfV0=)
+
+## Postman React Site: 
+https://csc3916-react19-vemp.onrender.com/
 
 
 For this assignment you will create a Users collection to store users for your signup and signin methods.  You will pass Username, Name and Password as part of signup.  To get a token you will call SingIn with username and password only.  The token should include the Name and UserName (not password)
